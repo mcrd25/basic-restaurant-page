@@ -1,0 +1,26 @@
+{
+  "name": "basic-restaurant-page",
+  "version": "1.0.0",
+  "description": "Basic Restaurant Page built using Vanilla JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcrd25/basic-restaurant-page.git"
+  },
+  "author": "mcrd25",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcrd25/basic-restaurant-page/issues"
+  },
+  "homepage": "https://github.com/mcrd25/basic-restaurant-page#readme",
+  "dependencies": {
+    "eslint": "^6.2.2",
+    "live-server": "^1.2.1",
+    "prettier": "^1.18.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
