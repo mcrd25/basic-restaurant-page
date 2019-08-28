@@ -23,10 +23,11 @@
   "homepage": "https://github.com/mcrd25/basic-restaurant-page#readme",
   "dependencies": {
     "eslint": "^6.2.2",
-    "live-server": "^1.2.1",
-    "prettier": "^1.18.2",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "live-server": "^1.2.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "prettier": "^1.18.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
