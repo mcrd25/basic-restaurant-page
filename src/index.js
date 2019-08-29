@@ -5,5 +5,5 @@ function component() {
 	element.innerHTML = `<h1>Hello, World</h1>`;
 	return element;
 }
-var main = document.querySelector('#content');
-main.appendChild(component());
+// var main = document.querySelector('#content');
+// main.appendChild(component());
