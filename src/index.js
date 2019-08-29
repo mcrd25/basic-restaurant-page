@@ -5,5 +5,8 @@ function component() {
 	element.innerHTML = `<h1>Hello, World</h1>`;
 	return element;
 }
+const sliderInit = () => {
+
+}
 // var main = document.querySelector('#content');
 // main.appendChild(component());
