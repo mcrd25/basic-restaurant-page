@@ -1,9 +1,15 @@
-import Main from './components/mainModule';
+import MainModule from './components/mainModule';
 
 const slider = document.querySelector('.slider');
 const mainDiv = document.querySelector('#content');
+const sideNav = document.querySelector('.sidenav');
 
-const main = new Main(mainDiv);
+const mainModule = new MainModule(mainDiv);
+
+const render = () => {
+  mainModule.createNav();
+  mainModule.createFooter();
+};
 const initSlider = (slider) => {
   M.Slider.init(slider, {
     indicators: false,
@@ -13,5 +19,11 @@ const initSlider = (slider) => {
   });
 };
 
-main.createNav();
-initSlider(slider);
+const initMaterialize = () => {
+  initSlider(slider);
+  M.Sidenav.init(sideNav, {});
+};
+
+
+render();
+initMaterialize();
