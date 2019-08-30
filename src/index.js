@@ -6,10 +6,24 @@ const sideNav = document.querySelector('.sidenav');
 
 const mainModule = new MainModule(mainDiv);
 
-const render = () => {
+const generateMainSkeleton = () => {
   mainModule.createNav();
+  mainModule.createMain();
   mainModule.createFooter();
 };
+const currentContent = (content) => {
+  const main = document.querySelector('main');
+  main.innerHTML = content;
+};
+const changeContent = () => {
+  
+}
+const render = () => {
+  generateMainSkeleton();
+
+};
+
+
 const initSlider = (slider) => {
   M.Slider.init(slider, {
     indicators: false,

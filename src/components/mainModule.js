@@ -17,7 +17,7 @@ export default class MainModule {
 
   createMain() {
     const main = document.createElement('main');
-    
+    this.parent.appendChild(main);
   }
 
   createFooter() {
