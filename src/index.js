@@ -17,7 +17,6 @@ const generateMainSkeleton = () => {
 //   main.innerHTML = content;
 // };
 // const changeContent = () => {
-  
 // }
 const render = () => {
   generateMainSkeleton();
