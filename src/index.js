@@ -5,8 +5,15 @@ function component() {
 	element.innerHTML = `<h1>Hello, World</h1>`;
 	return element;
 }
-const sliderInit = () => {
+// const sliderInit = () => {
 
-}
+// }
 // var main = document.querySelector('#content');
 // main.appendChild(component());
+const slider = document.querySelector('.slider');
+M.Slider.init(slider, {
+	indicators: false,
+	height: 400,
+	transition: 500,
+	intervals: 6000
+});
