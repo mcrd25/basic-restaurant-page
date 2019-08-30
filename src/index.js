@@ -1,3 +1,4 @@
+import M from 'materialize-css';
 import MainModule from './components/mainModule';
 
 const slider = document.querySelector('.slider');
@@ -11,18 +12,16 @@ const generateMainSkeleton = () => {
   mainModule.createMain();
   mainModule.createFooter();
 };
-const currentContent = (content) => {
-  const main = document.querySelector('main');
-  main.innerHTML = content;
-};
-const changeContent = () => {
+// const currentContent = (content) => {
+//   const main = document.querySelector('main');
+//   main.innerHTML = content;
+// };
+// const changeContent = () => {
   
-}
+// }
 const render = () => {
   generateMainSkeleton();
-
 };
-
 
 const initSlider = (slider) => {
   M.Slider.init(slider, {

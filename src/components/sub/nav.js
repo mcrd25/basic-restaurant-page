@@ -32,12 +32,12 @@ export default class Nav {
       };
       ul.className = className;
       ul.id = id;
-      menu.forEach(appendListItems); 
+      menu.forEach(appendListItems);
       return ul;
     };
     this.appendListItem = (ul, menuItem) => {
       const li = document.createElement('li');
-      const menuContent = menuItem.charAt(0).toUpperCase() + menuItem.slice(1)
+      const menuContent = menuItem.charAt(0).toUpperCase() + menuItem.slice(1);
       const a = this.createA(`${menuItem}-link`, menuContent);
       li.appendChild(a);
       ul.appendChild(li);
