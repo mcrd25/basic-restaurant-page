@@ -1,14 +1,15 @@
-class mainModule {
+import Nav from './sub/nav';
+
+export default class Main {
   constructor(parentNode) {
     this.parent = parentNode;
+    this.nav = new Nav();
   }
 
   createNav() {
-    this.nav = document.createElement('div');
-    this.nav.className = ''
-    return this.nav;
+    const { parent, nav } = this;
+
+    parent.appendChild(nav.generateNav());
+    parent.appendChild(nav.generateSideNav());
   }
 }
-export {
-  mainModule as default
-};
