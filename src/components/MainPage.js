@@ -81,7 +81,7 @@ export default class MainPage {
       row.appendChild(h4);
       row.appendChild(this.generateCard('https://source.unsplash.com/1600x900/?meal', 'Great Meals'));
       row.appendChild(this.generateCard('https://source.unsplash.com/1600x900/?waiter', 'Excellent Service'));
-      row.appendChild(this.generateCard('https://source.unsplash.com/1600x900/?dessert', 'Even Better Dessert'))
+      row.appendChild(this.generateCard('https://source.unsplash.com/1600x900/?dessert', 'Even Better Dessert'));
       container.appendChild(row);
       section.appendChild(container);
       return section;
@@ -140,12 +140,17 @@ export default class MainPage {
       container.append(h4, row, row2);
       section.appendChild(container);
       return section;
-    }
+    };
   }
 
   generateMainContent() {
     const content = this.generateDiv('content');
-    content.append(this.generateSlider(), this.generateWhyUs(), this.generateFollowUs(), this.generateGallery());
+    content.append(
+      this.generateSlider(),
+      this.generateWhyUs(),
+      this.generateFollowUs(),
+      this.generateGallery(),
+    );
     return content;
   }
 }

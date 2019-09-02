@@ -14,13 +14,13 @@ const generateMainSkeleton = () => {
   mainModule.createMain();
   mainModule.createFooter();
 };
-const currentContent = (content) => {
-  const main = document.querySelector('main');
-  main.appendChild(content);
-};
-const changeContent = () => {
+// const currentContent = (content) => {
+//   const main = document.querySelector('main');
+//   main.appendChild(content);
+// };
+// const changeContent = () => {
 
-}
+// };
 const render = () => {
   // generateMainSkeleton();
   // currentContent(mainPage.generateMainContent());
