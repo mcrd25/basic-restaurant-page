@@ -17,13 +17,13 @@ const generateMainSkeleton = () => {
 const currentContent = (content) => {
   const main = document.querySelector('main');
   console.log(main);
-  main.innerHTML = '<div>TEsting123</div>';
+  main.appendChild(content);
 };
 // const changeContent = () => {
 // }
 const render = () => {
   generateMainSkeleton();
-  currentContent('<div>Testing 123456436546u35689  u36 45u6 jhdfghjbdsfgjhbsdfjgb jdbghjdbvgjhbdvjgbdfjgvbsjdhd  </div>');
+  currentContent(mainPage.generateMainContent());
 };
 
 const initSlider = (slider) => {

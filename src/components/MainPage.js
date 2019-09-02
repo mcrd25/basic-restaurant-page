@@ -14,6 +14,7 @@ export default class MainPage {
     this.generateSlider = () => {
       const section = this.generateSection('slider');
       const ul = document.createElement('ul');
+      ul.className = 'slides';
       let liInner = `<img src="assets/imgs/slide-1.jpg">
         
             <div class="caption center-align">
@@ -64,11 +65,12 @@ export default class MainPage {
 
       cardImg.innerHTML = `<img src="${img}" alt="card image">
                   <span class="card-title">${title}</span>`;
-      cardContent.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Itaque expedita modi, distinctio sint quasi tenetur?';
+      cardContent.innerHTML = `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Itaque expedita modi, distinctio sint quasi tenetur?`;
       card.appendChild(cardImg);
       card.appendChild(cardContent);
       div.appendChild(card);
+      return div;
     };
     this.generateWhyUs = () => {
       const section = this.generateSection('section section-popular scrollspy');
@@ -87,6 +89,8 @@ export default class MainPage {
   }
 
   generateMainContent() {
-    return this.generateSlider();
+    const content = this.generateDiv('content');
+    content.append(this.generateSlider(), this.generateWhyUs());
+    return content;
   }
 }
