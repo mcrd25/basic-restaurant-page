@@ -12,7 +12,7 @@ export default class MainPage {
       return div;
     };
     this.generateSlider = () => {
-      const section = this.generateSection('slider');
+      const section = this.generateSection('slider', 'slider');
       const ul = document.createElement('ul');
       ul.className = 'slides';
       let liInner = `<img src="assets/imgs/slide-1.jpg">
@@ -73,7 +73,7 @@ export default class MainPage {
       return div;
     };
     this.generateWhyUs = () => {
-      const section = this.generateSection('section section-popular scrollspy');
+      const section = this.generateSection('section section-popular scrollspy', 'about');
       const container = this.generateDiv('container');
       const row = this.generateDiv('row');
       const h4 = this.generateSectionHeader('<span class="red-text">Why</span> Us?');
@@ -88,14 +88,14 @@ export default class MainPage {
     };
     this.generateFollowUs = () => {
       const social = ['fa-facebook', 'fa-twitter', 'fa-instagram', 'fa-pinterest'];
-      const section = this.generateSection('section section-follow red darken-2 white-text center');
+      const section = this.generateSection('section section-follow red darken-2 white-text center', 'follow_us');
       const container = this.generateDiv('container');
       const row = this.generateDiv('row');
       const innerDiv = this.generateDiv('col s12');
       const h4 = this.generateSectionHeader('Follow Us');
       const p = document.createElement('p');
       p.innerHTML = 'Follow us on social media to get great deals';
-      innerDiv.appendChild(h4, p);
+      innerDiv.append(h4, p);
       social.forEach((socialClass) => {
         const a = document.createElement('a');
         a.className = 'white-text fab-icon';
@@ -108,11 +108,44 @@ export default class MainPage {
       section.appendChild(container);
       return section;
     };
+    this.generateGallery = () => {
+      const firstRow = [
+        'https://source.unsplash.com/1600x900/?food',
+        'https://source.unsplash.com/1600x900/?breakfast',
+        'https://source.unsplash.com/1600x900/?lunch',
+        'https://source.unsplash.com/1600x900/?dinner',
+      ];
+      const secondRow = [
+        'https://source.unsplash.com/1600x900/?drink',
+        'https://source.unsplash.com/1600x900/?cocktail',
+        'https://source.unsplash.com/1600x900/?dessert',
+        'https://source.unsplash.com/1600x900/?healthyfood',
+      ];
+      const section = this.generateSection('section-gallery scrollspy', 'gallery');
+      const container = this.generateDiv('container');
+      const h4 = this.generateSectionHeader('<span class="red-text">Food</span> Gallery');
+      const row = this.generateDiv('row');
+      const row2 = this.generateDiv('row');
+      let div;
+      firstRow.forEach((link) => {
+        div = this.generateDiv('col s12 m3');
+        div.innerHTML = `<img src=${link} alt="gallery food image" class="materialboxed responsive-img">`;
+        row.appendChild(div);
+      });
+      secondRow.forEach((link) => {
+        div = this.generateDiv('col s12 m3');
+        div.innerHTML = `<img src=${link} alt="gallery food image" class="materialboxed responsive-img">`;
+        row2.appendChild(div);
+      });
+      container.append(h4, row, row2);
+      section.appendChild(container);
+      return section;
+    }
   }
 
   generateMainContent() {
     const content = this.generateDiv('content');
-    content.append(this.generateSlider(), this.generateWhyUs(), this.generateFollowUs());
+    content.append(this.generateSlider(), this.generateWhyUs(), this.generateFollowUs(), this.generateGallery());
     return content;
   }
 }
