@@ -18,11 +18,13 @@ const currentContent = (content) => {
   const main = document.querySelector('main');
   main.appendChild(content);
 };
-// const changeContent = () => {
-// }
+const changeContent = () => {
+
+}
 const render = () => {
-  generateMainSkeleton();
-  currentContent(mainPage.generateMainContent());
+  // generateMainSkeleton();
+  // currentContent(mainPage.generateMainContent());
+  // changeContent();
 };
 
 const initSlider = (slider) => {
@@ -35,11 +37,14 @@ const initSlider = (slider) => {
 };
 
 const initMaterialize = () => {
+  const slider = document.querySelector('.slider');
   initSlider(slider);
   M.Sidenav.init(sideNav, {});
+  const mbs = document.querySelectorAll('.materialboxed');
+  M.Materialbox.init(mbs, {});
 };
 
 
 render();
-const slider = document.querySelector('.slider');
+
 initMaterialize();
