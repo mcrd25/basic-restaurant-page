@@ -2,7 +2,7 @@ import M from 'materialize-css';
 import MainModule from './components/mainModule';
 import MainPage from './components/MainPage';
 
-const slider = document.querySelector('.slider');
+
 const mainDiv = document.querySelector('#content');
 const sideNav = document.querySelector('.sidenav');
 
@@ -16,7 +16,6 @@ const generateMainSkeleton = () => {
 };
 const currentContent = (content) => {
   const main = document.querySelector('main');
-  console.log(main);
   main.appendChild(content);
 };
 // const changeContent = () => {
@@ -42,4 +41,5 @@ const initMaterialize = () => {
 
 
 render();
+const slider = document.querySelector('.slider');
 initMaterialize();

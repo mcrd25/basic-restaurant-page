@@ -86,11 +86,33 @@ export default class MainPage {
       section.appendChild(container);
       return section;
     };
+    this.generateFollowUs = () => {
+      const social = ['fa-facebook', 'fa-twitter', 'fa-instagram', 'fa-pinterest'];
+      const section = this.generateSection('section section-follow red darken-2 white-text center');
+      const container = this.generateDiv('container');
+      const row = this.generateDiv('row');
+      const innerDiv = this.generateDiv('col s12');
+      const h4 = this.generateSectionHeader('Follow Us');
+      const p = document.createElement('p');
+      p.innerHTML = 'Follow us on social media to get great deals';
+      innerDiv.appendChild(h4, p);
+      social.forEach((socialClass) => {
+        const a = document.createElement('a');
+        a.className = 'white-text fab-icon';
+        a.href = '#';
+        a.innerHTML = `<i class="fab ${socialClass} fa-2x"></i>`;
+        innerDiv.appendChild(a);
+      });
+      row.appendChild(innerDiv);
+      container.appendChild(row);
+      section.appendChild(container);
+      return section;
+    };
   }
 
   generateMainContent() {
     const content = this.generateDiv('content');
-    content.append(this.generateSlider(), this.generateWhyUs());
+    content.append(this.generateSlider(), this.generateWhyUs(), this.generateFollowUs());
     return content;
   }
 }
