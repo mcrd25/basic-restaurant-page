@@ -1,11 +1,13 @@
 import M from 'materialize-css';
 import MainModule from './components/mainModule';
+import MainPage from './components/MainPage';
 
-const slider = document.querySelector('.slider');
+
 const mainDiv = document.querySelector('#content');
 const sideNav = document.querySelector('.sidenav');
 
 const mainModule = new MainModule(mainDiv);
+const mainPage = new MainPage();
 
 const generateMainSkeleton = () => {
   mainModule.createNav();
@@ -14,12 +16,15 @@ const generateMainSkeleton = () => {
 };
 // const currentContent = (content) => {
 //   const main = document.querySelector('main');
-//   main.innerHTML = content;
+//   main.appendChild(content);
 // };
 // const changeContent = () => {
-// }
+
+// };
 const render = () => {
-  generateMainSkeleton();
+  // generateMainSkeleton();
+  // currentContent(mainPage.generateMainContent());
+  // changeContent();
 };
 
 const initSlider = (slider) => {
@@ -32,10 +37,14 @@ const initSlider = (slider) => {
 };
 
 const initMaterialize = () => {
+  const slider = document.querySelector('.slider');
   initSlider(slider);
   M.Sidenav.init(sideNav, {});
+  const mbs = document.querySelectorAll('.materialboxed');
+  M.Materialbox.init(mbs, {});
 };
 
 
 render();
+
 initMaterialize();
