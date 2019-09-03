@@ -6,11 +6,11 @@ export default class ContactPage {
       div.className = className;
       return div;
     };
-    this.generateInputField = (placeholder, element, type, className = '') => {
+    this.generateFormField = (placeholder, element, type, className = '') => {
       const div = this.generateDiv('input-field');
       const field = document.createElement(element);
 
-      field.type = type;
+      field.setAttribute('type', type);
       field.placeholder = placeholder;
       if (className !== '') field.className = className;
       div.appendChild(field);
@@ -69,14 +69,13 @@ export default class ContactPage {
     const content = this.generateDiv('content');
     const container = this.generateDiv('container');
     const row = this.generateDiv('row');
-    const { section } = this;
     row.append(
       this.generateGeneralInfo(),
       this.generateForm(),
     );
     container.appendChild(row);
-    section.appendChild(container);
-    content.appendChild(this.section);
+    this.mainSection.appendChild(container);
+    content.appendChild(this.mainSection);
     return content;
   }
 }

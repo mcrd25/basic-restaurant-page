@@ -9,6 +9,7 @@ const sideNav = document.querySelector('.sidenav');
 
 const mainModule = new MainModule(mainDiv);
 const mainPage = new MainPage();
+const contactPage = new ContactPage();
 
 const generateMainSkeleton = () => {
   mainModule.createNav();
@@ -21,11 +22,10 @@ const setContent = (content) => {
 };
 const handleMenuClick = (button) => {
   const map = {
-    'home-link': 'home page',
-    'contact-link': 'contact page',
-    'menu-link': 'menu-page',
+    'home-link': mainPage.generateMainContent(),
+    'contact-link': contactPage.generateMainContent(),
   };
-  console.log(map[button.className]);
+  setContent(map[button.className]);
 };
 const navEventListener = (button) => {
   button.addEventListener('click', () => {
