@@ -6,7 +6,6 @@ import MenuPage from './components/MenuPage';
 
 
 const mainDiv = document.querySelector('#content');
-const sideNav = document.querySelector('.sidenav');
 
 const mainModule = new MainModule(mainDiv);
 const mainPage = new MainPage();
@@ -25,7 +24,6 @@ const initSlider = (slider) => {
 const initMaterialize = () => {
   const slider = document.querySelector('.slider');
   initSlider(slider);
-  M.Sidenav.init(sideNav, {});
   const mbs = document.querySelectorAll('.materialboxed');
   M.Materialbox.init(mbs, {});
 };
@@ -51,25 +49,31 @@ const handleMenuClick = (button) => {
   };
   setContent(map[button.className]);
 };
-const navEventListener = (button) => {
-  button.addEventListener('click', () => {
-    handleMenuClick(button);
+const navEventListener = (buttons) => {
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      handleMenuClick(button);
+    });
   });
 };
 
 const changeContent = () => {
-  const home = document.querySelector('.home-link');
-  const menu = document.querySelector('.menu-link');
-  const contact = document.querySelector('.contact-link');
+  const home = document.querySelectorAll('.home-link');
+  const menu = document.querySelectorAll('.menu-link');
+  const contact = document.querySelectorAll('.contact-link');
   navEventListener(home);
   navEventListener(menu);
   navEventListener(contact);
 };
+const initSideBar = () => {
+  const sideNav = document.querySelector('.sidenav');
+  M.Sidenav.init(sideNav, {});
+};
 const render = () => {
   generateMainSkeleton();
+  initSideBar();
   setContent(mainPage.generateMainContent());
   changeContent();
 };
-
 
 render();

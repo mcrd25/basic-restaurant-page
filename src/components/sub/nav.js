@@ -51,6 +51,7 @@ export default class Nav {
     this.sideNavTrigger = () => {
       const sideNav = document.createElement('a');
       sideNav.className = 'sidenav-trigger';
+      sideNav.href = '#';
       sideNav.setAttribute('data-target', 'mobile-nav');
       sideNav.innerHTML = '<i class="material-icons">menu</i>';
       return sideNav;
@@ -59,6 +60,7 @@ export default class Nav {
       const a = document.createElement('a');
       a.className = classname;
       a.innerHTML = innerHTML;
+      a.href = '#';
       return a;
     };
   }
