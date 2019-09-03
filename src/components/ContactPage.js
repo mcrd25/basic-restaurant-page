@@ -22,8 +22,8 @@ export default class ContactPage {
       const submitBtn = document.createElement('input');
       const fields = [
         ['Name', 'input', 'text'],
-        ['Email', 'input', 'text'],
-        ['Phone', 'input', 'phone'],
+        ['Email', 'input', 'email'],
+        ['Phone', 'input', 'text'],
         ['Message', 'textarea', 'text', 'materialize-textarea'],
       ];
       header.innherHTML = 'Please fill out this form';

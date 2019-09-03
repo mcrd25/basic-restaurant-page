@@ -3,5 +3,5 @@ linters:
     config: './.eslintrc.js'
 
 files:
-ignore:
-    - 'dist/*'
+  ignore:
+      - 'dist/*'
