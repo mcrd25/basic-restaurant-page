@@ -11,14 +11,35 @@ const mainModule = new MainModule(mainDiv);
 const mainPage = new MainPage();
 const contactPage = new ContactPage();
 
+const initSlider = (slider) => {
+  M.Slider.init(slider, {
+    indicators: false,
+    height: 500,
+    transition: 500,
+    intervals: 6000,
+  });
+};
+
+const initMaterialize = () => {
+  const slider = document.querySelector('.slider');
+  initSlider(slider);
+  M.Sidenav.init(sideNav, {});
+  const mbs = document.querySelectorAll('.materialboxed');
+  M.Materialbox.init(mbs, {});
+};
+
 const generateMainSkeleton = () => {
   mainModule.createNav();
   mainModule.createMain();
   mainModule.createFooter();
 };
+
 const setContent = (content) => {
   const main = document.querySelector('main');
-  main.appendChild(content);
+  const div = document.querySelector('.content');
+  if (div) main.removeChild(div);
+  main.append(content);
+  initMaterialize();
 };
 const handleMenuClick = (button) => {
   const map = {
@@ -47,24 +68,7 @@ const render = () => {
   changeContent();
 };
 
-const initSlider = (slider) => {
-  M.Slider.init(slider, {
-    indicators: false,
-    height: 500,
-    transition: 500,
-    intervals: 6000,
-  });
-};
-
-const initMaterialize = () => {
-  const slider = document.querySelector('.slider');
-  initSlider(slider);
-  M.Sidenav.init(sideNav, {});
-  const mbs = document.querySelectorAll('.materialboxed');
-  M.Materialbox.init(mbs, {});
-};
-
 
 render();
 
-initMaterialize();
+// initMaterialize();

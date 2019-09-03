@@ -1,6 +1,5 @@
 export default class ContactPage {
   constructor() {
-    this.mainSection = document.createElement('section');
     this.generateDiv = (className) => {
       const div = document.createElement('div');
       div.className = className;
@@ -69,13 +68,14 @@ export default class ContactPage {
     const content = this.generateDiv('content');
     const container = this.generateDiv('container');
     const row = this.generateDiv('row');
+    const section = document.createElement('section');
     row.append(
       this.generateGeneralInfo(),
       this.generateForm(),
     );
     container.appendChild(row);
-    this.mainSection.appendChild(container);
-    content.appendChild(this.mainSection);
+    section.appendChild(container);
+    content.appendChild(section);
     return content;
   }
 }
