@@ -2,6 +2,7 @@ import M from 'materialize-css';
 import MainModule from './components/mainModule';
 import MainPage from './components/MainPage';
 import ContactPage from './components/ContactPage';
+import MenuPage from './components/MenuPage';
 
 
 const mainDiv = document.querySelector('#content');
@@ -10,6 +11,7 @@ const sideNav = document.querySelector('.sidenav');
 const mainModule = new MainModule(mainDiv);
 const mainPage = new MainPage();
 const contactPage = new ContactPage();
+const menuPage = new MenuPage();
 
 const initSlider = (slider) => {
   M.Slider.init(slider, {
@@ -45,6 +47,7 @@ const handleMenuClick = (button) => {
   const map = {
     'home-link': mainPage.generateMainContent(),
     'contact-link': contactPage.generateMainContent(),
+    'menu-link': menuPage.generateMainContent(),
   };
   setContent(map[button.className]);
 };
