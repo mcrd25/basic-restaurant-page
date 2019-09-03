@@ -7,6 +7,7 @@ export default class MenuPage {
     };
     this.generateSectionHeader = (content) => {
       const h4 = document.createElement('h4');
+      h4.className = 'center';
       h4.innerHTML = content;
       return h4;
     };
@@ -76,10 +77,11 @@ export default class MenuPage {
 
   generateMainContent() {
     const content = this.generateDiv('content');
-    const h1 = document.createElement('h1');
-    h1.innerHTML = 'Checkout Our Latest Menu!';
+    const h2 = document.createElement('h2');
+    h2.className = 'center';
+    h2.innerHTML = 'Checkout Our Latest Menu!';
     content.append(
-      h1,
+      h2,
       this.generateBreakfastMenu(),
       this.generateMealMenu(),
       this.generateDessertMenu(),
