@@ -1,6 +1,7 @@
 import M from 'materialize-css';
 import MainModule from './components/mainModule';
 import MainPage from './components/MainPage';
+import ContactPage from './components/ContactPage';
 
 
 const mainDiv = document.querySelector('#content');
@@ -14,17 +15,36 @@ const generateMainSkeleton = () => {
   mainModule.createMain();
   mainModule.createFooter();
 };
-// const currentContent = (content) => {
-//   const main = document.querySelector('main');
-//   main.appendChild(content);
-// };
-// const changeContent = () => {
+const setContent = (content) => {
+  const main = document.querySelector('main');
+  main.appendChild(content);
+};
+const handleMenuClick = (button) => {
+  const map = {
+    'home-link': 'home page',
+    'contact-link': 'contact page',
+    'menu-link': 'menu-page',
+  };
+  console.log(map[button.className]);
+};
+const navEventListener = (button) => {
+  button.addEventListener('click', () => {
+    handleMenuClick(button);
+  });
+};
 
-// };
+const changeContent = () => {
+  const home = document.querySelector('.home-link');
+  const menu = document.querySelector('.menu-link');
+  const contact = document.querySelector('.contact-link');
+  navEventListener(home);
+  navEventListener(menu);
+  navEventListener(contact);
+};
 const render = () => {
-  // generateMainSkeleton();
-  // currentContent(mainPage.generateMainContent());
-  // changeContent();
+  generateMainSkeleton();
+  setContent(mainPage.generateMainContent());
+  changeContent();
 };
 
 const initSlider = (slider) => {
