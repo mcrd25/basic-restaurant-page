@@ -70,5 +70,3 @@ const render = () => {
 
 
 render();
-
-// initMaterialize();
