@@ -4,7 +4,12 @@
   "description": "Basic Restaurant Page built using Vanilla JS",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress -p",
+    "dev": "webpack --mode development",
+    "watch": "webpack --progress --mode development --watch",
+    "server": "webpack-dev-server --open",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -18,9 +23,17 @@
   "homepage": "https://github.com/mcrd25/basic-restaurant-page#readme",
   "dependencies": {
     "eslint": "^6.2.2",
-    "live-server": "^1.2.1",
-    "prettier": "^1.18.2",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "live-server": "^1.2.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "prettier": "^1.18.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   }
 }
